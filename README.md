@@ -1,7 +1,7 @@
 Gradle ASM
 ==========
 
-Demonstrates ASM issue with Gradle 1.2 and Cobertura.
+Demonstrates ASM issue with Gradle 1.2 and Cobertura. See [Gradle Forums](http://forums.gradle.org/gradle/topics/cobertura_instrumentation_fails_in_gradle_1_2) for discussion.
 
 <pre>
 $ gradle clean test
