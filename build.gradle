@@ -1,0 +1,34 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.mapvine:gradle-cobertura-plugin:0.3.1'
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'cobertura'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile gradleApi()
+    groovy localGroovy()
+    
+    testCompile 'junit:junit-dep:4.10'
+    testCompile 'org.hamcrest:hamcrest-core:1.2'
+    testCompile 'org.hamcrest:hamcrest-library:1.2'
+}
+
+group = 'scratch.gradle.asm'
+version = '1.0.0'
+
+cobertura {
+    sourceDirs = sourceSets.main.groovy.srcDirs
+    format = 'xml'
+    includes = ['**/*.java', '**/*.groovy']
+}
